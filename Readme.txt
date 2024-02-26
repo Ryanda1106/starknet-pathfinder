@@ -28,7 +28,8 @@ docker run -d \
   eqlabs/pathfinder
 XXXXXXXXXXXX  diganti dengan link HTTPS mu dari alchemy
 Contoh:
-mkdir -p $HOME/pathfinder docker run -d
+mkdir -p $HOME/pathfinder 
+docker run -d
 --rm
 -p 9545:9545
 --user "$(id -u):$(id -g)"
