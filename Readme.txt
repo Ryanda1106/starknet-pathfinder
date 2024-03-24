@@ -110,3 +110,14 @@ cp example.pathfinder-var.env pathfinder-var.env
 
 docker-compose up -d
 To check if it's running well use docker-compose logs -f.
+
+mkdir -p $HOME/pathfinder
+docker run -d \
+  --rm \
+  -p 9545:9545 \
+  --user "$(id -u):$(id -g)" \
+  -e RUST_LOG=info \
+  --name starknet \
+  -e PATHFINDER_ETHEREUM_API_URL="https://eth1.lava.build/lava-referer-dd946195-d07d-46cc-95f8-6759c1013778" \
+  -v $HOME/pathfinder:/usr/share/pathfinder/data \
+  eqlabs/pathfinder
